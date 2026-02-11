@@ -65,6 +65,60 @@ TRIARII is designed with an **Enterprise Resource Planning (ERP)** mindset. The 
 
 ---
 
+## 📊 System Performance & Security Audit
+
+TRIARII is benchmarked using industry-standard tools (**Google Lighthouse** and **Mozilla Observatory**) to ensure the ERP backbone meets production requirements.
+
+### **1. Web Vitals & Frontend Performance**
+
+The system is optimized for "Tactical UX," prioritizing low execution time to ensure athletes can log data during high-intensity sessions.
+
+| Category | Score | Status |
+| --- | --- | --- |
+| **Performance** | **86/100** | 🟠 Optimizing |
+| **Accessibility** | **89/100** | 🟠 High |
+| **Best Practices** | **96/100** | 🟢 Excellent |
+| **SEO** | **91/100** | 🟢 Excellent |
+
+#### **Technical Deep Dive (Desktop vs. Mobile)**
+
+* **Total Blocking Time (TBT):** Maintained at **120ms** across all platforms. This ensures the UI remains responsive and "jank-free" during complex state updates.
+* **Cumulative Layout Shift (CLS):** **0**. The UI is rock-solid; no elements jump around during loading, preventing accidental "mis-clicks".
+* **The "Speed Index" Bottleneck:**
+* **Desktop:** 4.7s.
+* **Mobile:** 8.4s.
+* *Analysis:* The high mobile Speed Index is likely due to the initial Firebase handshake and heavy tactical CSS variables. Current roadmap includes implementing **PWA caching** to bring this under 3s.
+* 
+---
+
+### **2. Security Posture (Mozilla Observatory)**
+
+**Current Grade:** `C (50/100)` — *In-Progress Hardening*.
+
+While the system handles basic security well, the ERP nature of the app requires moving toward an **A+** rating.
+
+| Test Category | Result | Impact |
+| --- | --- | --- |
+| **HSTS** | ✅ Passed | Forced HTTPS for all Unit Comms. |
+| **CORS** | ✅ Passed | Blocked unauthorized cross-origin requests. |
+| **CSP** | ❌ **Failed** | No Content Security Policy implemented. |
+| **X-Frame-Options** | ❌ **Failed** | Vulnerable to clickjacking via framing. |
+| **X-Content-Type** | ❌ **Failed** | Risk of MIME-type sniffing. |
+
+#### **Security Hardening Roadmap**
+
+1. **CSP Implementation:** Deploying a strict policy to prevent unauthorized script execution.
+2. **Anti-Clickjacking:** Setting `X-Frame-Options: DENY` to ensure the Command Console cannot be embedded in malicious sites.
+3. **Referrer Policy:** Implementing `strict-origin-when-cross-origin` to protect internal route data during navigation.
+
+---
+
+### **3. Operational Significance**
+
+By tracking these "raw" metrics, the TRIARII project maintains a **Transparent Engineering Log**. A 50/100 security score isn't a failure—it's a prioritized backlog. The focus remains on maintaining the **120ms TBT** to ensure the app stays "Tactical" while we incrementally harden the Firebase hosting headers.
+
+---
+
 ### **System Credentials**
 
 * **Lead Developer:** [omsusi](https://www.google.com/search?q=https://github.com/omsusi)
