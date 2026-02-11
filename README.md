@@ -88,7 +88,6 @@ The system is optimized for "Tactical UX," prioritizing low execution time to en
 * **Desktop:** 4.7s.
 * **Mobile:** 8.4s.
 * *Analysis:* The high mobile Speed Index is likely due to the initial Firebase handshake and heavy tactical CSS variables. Current roadmap includes implementing **PWA caching** to bring this under 3s.
-* 
 ---
 
 ### **2. Security Posture (Mozilla Observatory)**
